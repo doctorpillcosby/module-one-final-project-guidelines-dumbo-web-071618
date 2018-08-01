@@ -1,2 +1,4 @@
-class Monster < ActiveRecord::Base[5.0]
+class Monster < ActiveRecord::Base
+  has_many :battlefields
+  has_many :soldiers_battlefields, through: :battlefields
 end
