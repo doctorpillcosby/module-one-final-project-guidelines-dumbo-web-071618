@@ -38,6 +38,7 @@ def method_name(soldier_data)
         soldier_data, monster_data)
 
       level_1.game_loop
+      level_1.save
       method_name(soldier_data)
     elsif player_choice == 'Get new Weapons'
       puts "===== WEAPON DLC (Not included) $19.99 slack Kevin for details!========"

@@ -24,7 +24,7 @@ class SoldierBattlefield < ActiveRecord::Base
       player_choice = monster_menu
       system "clear"
       if player_choice == 'Attack'
-        arr_comments = ["Die monster!", "OHHHHH Shiit hes about to explode!", "This is our only chance!"]
+        arr_comments = ["Die monster!"]
         puts arr_comments.sample
         sleep 1
       elsif player_choice == 'Run Away!'
@@ -37,7 +37,7 @@ class SoldierBattlefield < ActiveRecord::Base
         soldier.heal
         puts "You have healed"
       end
-      player_turn
+      player_turn if !player_choice =='Patch your wounds'
       monster_turn
       puts "#{soldier.name} HAS LOST" if soldier_dead?
     end
@@ -49,7 +49,6 @@ class SoldierBattlefield < ActiveRecord::Base
     prompt = TTY::Prompt.new
     choice = prompt.select("Make your choice carefully you're fighting #{monster.name}") do |menu|
       menu.choice 'Attack'
-      menu.choice 'Use Weapon'
       menu.choice 'Check HP'
       menu.choice 'Patch your wounds'
       menu.choice 'Run Away!'

@@ -40,7 +40,7 @@ class Soldier < ActiveRecord::Base
       puts "You last fought at #{soldier.battlefields.last.name}!" unless soldier.battlefields.length == 0
     else
       soldier = Soldier.create(name: soldier_name)
-      puts "Must be a new soldier ... Fresh Meat! You are starting from the TOP!"
+      puts "Must be a new soldier ... Fresh Meat! Private #{soldier.name} You are starting from the bottom!"
       sleep 3
       puts "Good luck #{soldier.name} your hp is #{soldier.hp} and your special ability is #{soldier.ability}."
     end
